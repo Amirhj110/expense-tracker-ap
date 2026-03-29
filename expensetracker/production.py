@@ -38,12 +38,16 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'expensetracker.urls'
 WSGI_APPLICATION = 'expensetracker.wsgi.application'
 
-# Database - Use PostgreSQL
+# Database - Use PostgreSQL from Railway
 DATABASES = {
-    'default': dj_database_url.config(
-        default='sqlite:///db.sqlite3',
-        conn_max_age=600
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'ttCoMewPvoBrhPyFxqDaWKeNOJOLkjxa',
+        'HOST': 'hopper.proxy.rlwy.net',
+        'PORT': '19527',
+    }
 }
 
 # Static files
