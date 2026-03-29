@@ -1,11 +1,11 @@
 [phases.setup]
-nixPkgs = ["python311"]
+nixPkgs = ["python311", "python311Packages.pip"]
 
 [phases.install]
 cmds = ["pip install -r requirements.txt"]
 
 [phases.build]
-cmds = ["python manage.py collectstatic --noinput --settings=expensetracker.settings_production"]
+cmds = ["python manage.py collectstatic --noinput"]
 
 [start]
-cmd = "gunicorn expensetracker.wsgi:application --settings=expensetracker.settings_production"
+cmd = "bash start.sh"
