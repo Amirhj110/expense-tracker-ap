@@ -4,9 +4,15 @@ from pathlib import Path
 from datetime import timedelta
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+# SECURITY WARNING: keep the secret key used in production secret!
+# We use a fallback string so the build never fails.
+SECRET_KEY = os.environ.get('SECRET_KEY', 'railway-deployment-fallback-key-12345')
 
-SECRET_KEY = os.environ.get('django-insecure-a+sfk4y8ozll)$xqcw93tc&m=9q7mfne_j-^smk9#j=b(2j4vc')
+# Ensure DEBUG is actually a boolean False
 DEBUG = False
+
+# SECRET_KEY = os.environ.get('django-insecure-a+sfk4y8ozll)$xqcw93tc&m=9q7mfne_j-^smk9#j=b(2j4vc')
+# DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
