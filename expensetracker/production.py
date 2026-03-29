@@ -238,3 +238,16 @@ if DEBUG:
     print(f"CORS_ALLOWED_ORIGINS: {CORS_ALLOWED_ORIGINS}")
 
 
+# Force migrations to run on startup
+import sys
+if 'migrate' not in sys.argv and 'makemigrations' not in sys.argv:
+    try:
+        from django.core.management import call_command
+        call_command('migrate', interactive=False)
+        call_command('create_categories')
+    except Exception as e:
+        print(f"Startup migration error: {e}")
+
+
+
+        

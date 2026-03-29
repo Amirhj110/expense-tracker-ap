@@ -1,1 +1,1 @@
-web: gunicorn expensetracker.wsgi:application --settings=expensetracker.production
+web: python manage.py migrate && python manage.py create_categories && gunicorn expensetracker.wsgi:application

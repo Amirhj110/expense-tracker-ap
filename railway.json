@@ -1,10 +1,10 @@
 {
     "build": {
         "builder": "NIXPACKS",
-        "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput --settings=expensetracker.settings_production"
+        "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput"
     },
     "deploy": {
-        "startCommand": "gunicorn expensetracker.wsgi:application --settings=expensetracker.settings_production",
+        "startCommand": "python manage.py migrate && python manage.py create_categories && gunicorn expensetracker.wsgi:application",
         "restartPolicyType": "ON_FAILURE",
         "restartPolicyMaxRetries": 10
     }
