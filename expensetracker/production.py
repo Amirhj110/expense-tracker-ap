@@ -12,7 +12,7 @@ from datetime import timedelta
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-your-secret-key-change-this')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-a+sfk4y8ozll)$xqcw93tc&m=9q7mfne_j-^smk9#j=b(2j4vc')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
@@ -238,4 +238,3 @@ if DEBUG:
     print(f"CORS_ALLOWED_ORIGINS: {CORS_ALLOWED_ORIGINS}")
 
 
-    
