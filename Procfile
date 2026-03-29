@@ -1,1 +1,1 @@
-web: gunicorn expensetracker.wsgi
+web: gunicorn expensetracker.wsgi:application --settings=expensetracker.production
