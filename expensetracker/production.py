@@ -183,3 +183,17 @@ LOGGING = {
         },
     },
 }
+
+# Final fix for Railway CSRF and Hosts
+ALLOWED_HOSTS = [
+    'expense-tracker-ap-production.up.railway.app',
+    'localhost',
+    '127.0.0.1',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://expense-tracker-ap-production.up.railway.app',
+]
+
+# This ensures Django knows it's behind a secure proxy (Railway)
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
